@@ -8,7 +8,7 @@ const Layout = () => {
     <>
         <Header />
         <div className='page-layout' id='page-layout'>
-          <div className="container">
+          <div className="container inline-p">
             <Outlet />
           </div>
         </div>

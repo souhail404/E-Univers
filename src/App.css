@@ -14,18 +14,16 @@
     --padding: 30px
 }
 
-header.header--11 > .container--11{
+header.header > .container--header{
     height: var(--header-height);
 }
-header.header--11 .container{
+.inline-p{
     padding-inline: var(--padding);
 }
-
 #page-layout{
     margin-top: var(--header-height);
-}
-#page-layout .container{
-    padding-inline: var(--padding);
+    padding-block: 36px;
+    min-height: 120vh;
 }
 
 @media (max-width:770px) {
