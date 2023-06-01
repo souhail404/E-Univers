@@ -2,28 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.search-field.active{
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    background-color: white;
-    width: 100%;
-    justify-content: center;
+    position: relative;
+    z-index: 999;
 }
 .search-field .input-wrapper{
     display: flex;
     align-items: center;
     border-radius: 6px;
     border: 1px solid #757575;
-}
-.search-field.active .input-wrapper{
-    width: 100%;
-    padding-inline: 6%;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr auto;
 }
 .search-field .search-bar{
     border: none;
@@ -32,9 +18,9 @@
     height: 100%;
     padding: 2px 4px;
 }
-.search-field.active .search-bar{
+/* .search-field.active .search-bar{
     width: 100%;
-}
+} */
 .search-field .search-icon , .search-field .cancel-icon{
     border: none;
     background-color: transparent;
@@ -50,6 +36,12 @@
 }
 .search-field.active .search-result{
     display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+    background-color: #ffffff;
+    border: 0.5px solid #d3d3d3;
 }
 .search-field .search-result .results-wrapper{
     width: 100%;
@@ -58,10 +50,38 @@
     flex-direction: column;
 }
 .search-field .search-result .results-wrapper .result-link:not(:last-child){
-    border-bottom: 1px solid #7575752a;
+    border-bottom: 1px solid #d3d3d3;
 }
 .search-field .search-result .results-wrapper .result-link{
     padding-block: 12px;
     width: 100%;
     color: black;
+}
+.search-field.active .search-icon{
+    display: none;
+}
+.search-field.active .cancel-icon{
+    display: block;
+}
+
+@media (max-width:770px) {
+    .search-field.active{
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        /* background-color: white; */
+        width: 100%;
+        justify-content: center;
+    }
+    .search-field.active .input-wrapper{
+        width: 100%;
+        padding-inline: 6%;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr auto;
+    }
+    .search-field.active .search-bar{
+        width: 100%;
+    }
 }
