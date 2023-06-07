@@ -1,16 +1,16 @@
 import React from 'react'
-import './style.css'
+import './Header.css'
 
-import MainHeader from './MainHeader'
-import TopHeader from './TopHeader'
+import SecondaryHeader from '../SecondaryHeader/SecondaryHeader'
+import PrimaryHeader from '../PrimaryHeader/PrimaryHeader'
 
 
 const Header = () => {
   return (
     <header className='header' id='header'>
       <div className="container--header">
-        <TopHeader />
-        <MainHeader />
+        <SecondaryHeader />
+        <PrimaryHeader />
       </div>
     </header>
   )
