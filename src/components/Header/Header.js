@@ -1,8 +1,8 @@
 import React from 'react'
-import './Header.css'
+import './style.css'
 
-import SecondaryHeader from '../SecondaryHeader/SecondaryHeader'
-import PrimaryHeader from '../PrimaryHeader/PrimaryHeader'
+import SecondaryHeader from '../TopHeader/TopHeader'
+import PrimaryHeader from '../MainHeader/MainHeader'
 
 
 const Header = () => {

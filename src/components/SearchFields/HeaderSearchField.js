@@ -1,5 +1,21 @@
 import React,  { useRef, useState } from 'react'
+import './style.css';
+import { Link } from 'react-router-dom';
 import {AiOutlineSearch, AiOutlineClose } from 'react-icons/ai'
+
+
+const SearchField = ({ classNames }) => {
+    const [result , setResult] = useState([])
+    const [isActive , setIsActive] = useState(' notactive')
+
+    return (
+        <div className={'search-field ' + classNames + isActive }>
+            <SearchBar setResult={setResult} setIsActive={setIsActive} isActive={isActive} />
+            <SearchResult result={result}/>
+        </div>
+    )
+}
+
 
 const SearchBar = ({ setResult, setIsActive }) => {
     const [searchInput , setSearchInput] = useState("");
@@ -14,7 +30,7 @@ const SearchBar = ({ setResult, setIsActive }) => {
                 });
                 setResult(results);
             });
-    }
+    } 
     
     const handleChange = (value) => {
         setSearchInput(value);
@@ -39,4 +55,19 @@ const SearchBar = ({ setResult, setIsActive }) => {
   )
 }
 
-export default SearchBar
+
+const SearchResult = ({result}) => {
+    return (
+      <div className="search-result">
+          <div className="results-wrapper">
+              { result.map((re, index)=>{
+                  return <Link className='result-link' key={index} > {re.name} </Link>
+              }) }
+              
+              
+          </div>
+      </div>
+    )
+  } 
+
+export default SearchField

@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 
-import './LinkDropDown.css'
+import './style.css'
 
-const LinkDropDown = (props) => {
+const DropDownAtHover = (props) => {
+      
     const [menuOpen, setMenuOpen] = useState(false);
-    console.log(props)
     return (  
     <div  
         className={'link-dd ' + props.className} 
@@ -16,25 +16,27 @@ const LinkDropDown = (props) => {
           {props.children[0]}
           
       </div>     
-      {menuOpen && <div className="link-dd-menu-wrpr"> <LinkDropDownMenu> {props.children[1]} </LinkDropDownMenu> </div>}
+      {menuOpen && <div className="link-dd-menu-wrpr"> <DdMenu> {props.children[1]} </DdMenu> </div>}
     </div>
   )
 }
 
-const LinkDropDownBtn = (props) =>{ 
+const DdBtn = (props) =>{ 
   return ( 
       <Link to={'/'} className='link-dd-btn' key={'link'} > 
           {props.children}
-          <span className='qte'>{ props.qte }</span>
+          {props.qte && <span className='qte'>{ props.qte }</span>}
       </Link>
     );
 }
 
-const LinkDropDownMenu = (props) =>{
+const DdMenu = (props) =>{
   return (
     <>
       {props.children}
     </> 
   );
 }
-export { LinkDropDown, LinkDropDownBtn, LinkDropDownMenu }
+
+
+export { DropDownAtHover, DdBtn, DdMenu }
