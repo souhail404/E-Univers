@@ -5,7 +5,7 @@ import { AiOutlineUser } from 'react-icons/ai'
 const DdAccount = (props) => {
   return (
     <DropDownAtHover  className={props.className}>
-        <DdBtn>
+        <DdBtn linkto={props.linkto}>
           <AiOutlineUser /> 
         </DdBtn>
         <DdMenu>

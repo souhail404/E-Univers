@@ -23,7 +23,7 @@ const DropDownAtHover = (props) => {
 
 const DdBtn = (props) =>{ 
   return ( 
-      <Link to={'/'} className='link-dd-btn' key={'link'} > 
+      <Link to={props.linkto} className='link-dd-btn' key={'link'} > 
           {props.children}
           {props.qte && <span className='qte'>{ props.qte }</span>}
       </Link>

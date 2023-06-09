@@ -1,14 +1,15 @@
 import React , {useState} from 'react'
-import {AiOutlineMenu , AiOutlineDown } from 'react-icons/ai'
+import {AiOutlineMenu , AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 
-import SearchField from '../SearchFields/HeaderSearchField'
+import HeaderSearchField from '../SearchFields/HeaderSearchField'
 import DdCart from '../DropDownAtHover/DdCart';
 import DdWishlist from '../DropDownAtHover/DdWishlist';
 import DdAccount from '../DropDownAtHover/DdAccount';
+import { DropDownAtClick, DdcBtn , DdcMenu } from '../DropDownAtClick/DropDownAtClick';
 
 // Layout Main Component
-const PrimaryHeader = () => {
+const MainHeader = () => {
   return (
     <div className="main-header">
         <div className="container inline-p">
@@ -19,11 +20,11 @@ const PrimaryHeader = () => {
 
             <Categories />
 
-            <div className="dropdown-actions">
-                <SearchField classNames='elem header-search-field' />
-                <DdAccount className='elem fav' />
-                <DdCart className='elem cart' />
-                <DdWishlist className='elem account'/>
+            <div className="right-side--header">
+                <HeaderSearchField classNames='ls-elem search-field--header' />
+                <DdWishlist className='ls-elem fav' linkto='/wishlist/ '/>
+                <DdCart className='ls-elem cart' linkto='/shopping-cart/' />
+                <DdAccount className='ls-elem account' linkto='account'/>
             </div>
 
         </div>
@@ -35,19 +36,19 @@ const PrimaryHeader = () => {
 const BurgerMenu = () => {
   const [menuOpen , setMenuOpen] = useState(false)
   return (
-    <div className="phone-menu">
-        <div className="phone-menu-btn" onClick={()=>{setMenuOpen(!menuOpen)}}>
-            <AiOutlineMenu/>
+    <div className="phone-menu--header">
+        <div className="burger-btn" onClick={()=>{setMenuOpen(!menuOpen)}}>
+            <AiOutlineMenu className='burger-icon'/>
         </div>
-        {menuOpen && <div className="phone-menu-container"></div>}
+        {menuOpen && <div className="menu-wrpr"></div>}
     </div>
   )
 }
 
 const Logo = () => {
   return (
-    <div className="logo">
-        <Link to={``} className='link-img'>
+    <div className="logo--header">
+        <Link to={`/`} className='link-img'>
             <div className="icon">
                 <img src="logo/red.png" alt="" />
             </div>
@@ -58,16 +59,22 @@ const Logo = () => {
 
 const Categories = () => {
   return (
-    <div className="categories">
-        <div className="links-wrapper-small">
-            <div className="drop-btn">
-                Categories <AiOutlineDown className='icon' />
+    <div className="categories--header">
+        
+        <DropDownAtClick className="categories-dd--header">
+          <DdcBtn>
+              <p>Categories</p>  
+              <AiOutlineDown className='icon open-icon' />
+              <AiOutlineUp className='icon close-icon' />
+          </DdcBtn>
+          <DdcMenu>
+            <div className="categories-dd-menu">
+              test
             </div>
-            <div className="drop-menu">
+          </DdcMenu>
+        </DropDownAtClick>
 
-            </div>
-        </div>
-        <ul className='links-wrapper-big'>
+        <ul className='links-wrapper'>
             <li><Link className='link'>Phones</Link></li>
             <span className='separator'></span>
             <li><Link className='link'>Laptops</Link></li>
@@ -87,4 +94,4 @@ const Categories = () => {
 
 
 
-export default PrimaryHeader
+export default MainHeader

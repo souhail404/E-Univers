@@ -6,33 +6,29 @@
     color: inherit;
     display: flex;
     align-items: center;
-    padding-inline: 6px;
-    font-size: 24px;
     cursor: pointer;
     position: relative;
 }
-.link-dd-btn > .qte{
-    width: 16px;
-    height: 16px;
-    font-size: 10px;
-    font-weight: 500;
-    border-radius: 100%;
-    background-color: rgb(255, 0, 0);
-    color: rgb(255, 255, 255);
+.link-dd-btn > .qte{ 
+    width: 10px;
+    height: 10px;
+    font-size: 8px;
+    padding: 2px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: -6px;
-    right: -2px;
+    top: 0;
+    right: 0;
+    aspect-ratio: 2/2;
 }
 .link-dd-menu-wrpr{
     position: absolute;
     bottom: 0px;
     right: 0;
     transform: translateY(100%);
-    min-width: 150px;
-    padding-top: 12px;
+    min-width: 50px;
+    padding-top: 6px;
     z-index: 999;
-    background-color: antiquewhite;
 }

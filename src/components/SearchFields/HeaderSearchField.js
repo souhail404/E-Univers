@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom';
 import {AiOutlineSearch, AiOutlineClose } from 'react-icons/ai'
 
 
-const SearchField = ({ classNames }) => {
+const HeaderSearchField = ({ classNames }) => {
     const [result , setResult] = useState([])
     const [isActive , setIsActive] = useState(' notactive')
 
     return (
-        <div className={'search-field ' + classNames + isActive }>
-            <SearchBar setResult={setResult} setIsActive={setIsActive} isActive={isActive} />
-            <SearchResult result={result}/>
+        <div className={'search-field-wrpr ' + classNames + isActive }>
+            <SearchInput setResult={setResult} setIsActive={setIsActive} isActive={isActive} />
+            <SearchResultMenu result={result}/>
         </div>
     )
 }
 
 
-const SearchBar = ({ setResult, setIsActive }) => {
+const SearchInput = ({ setResult, setIsActive }) => {
     const [searchInput , setSearchInput] = useState("");
     const searchbar = useRef()
 
@@ -47,7 +47,7 @@ const SearchBar = ({ setResult, setIsActive }) => {
         setIsActive(' active')
     }
   return (
-    <div className="input-wrapper">
+    <div className="input-wrpr">
         <input className='search-bar' ref={searchbar} type="text" placeholder='Search ...' onChange={(e)=> handleChange(e.target.value)} />
         <AiOutlineSearch  className='search-icon' onClick={()=> handleSearch(' active')}/>
         <AiOutlineClose className='cancel-icon' onClick={()=> handleCancel()} />
@@ -56,10 +56,10 @@ const SearchBar = ({ setResult, setIsActive }) => {
 }
 
 
-const SearchResult = ({result}) => {
+const SearchResultMenu = ({result}) => {
     return (
-      <div className="search-result">
-          <div className="results-wrapper">
+      <div className="result-menu-wrpr">
+          <div className="results-menu">
               { result.map((re, index)=>{
                   return <Link className='result-link' key={index} > {re.name} </Link>
               }) }
@@ -68,6 +68,6 @@ const SearchResult = ({result}) => {
           </div>
       </div>
     )
-  } 
+  }  
 
-export default SearchField
+export default HeaderSearchField

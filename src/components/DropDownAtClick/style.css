@@ -1,0 +1,35 @@
+
+.dd{
+    position: relative;
+}
+.dd-btn{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+}
+.dd-menu-wrpr{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transform: translateY(100%);
+    width: 100%;
+    padding-top: 6px;
+    z-index: 999;
+}
+.dd .icon{
+    margin-left: auto;
+}
+.dd.close .open-icon{
+    display: block;
+}
+.dd.close .close-icon{
+    display: none;
+}
+.dd.open .open-icon{
+    display: none;
+}
+.dd.open .close-icon{
+    display: block;
+}

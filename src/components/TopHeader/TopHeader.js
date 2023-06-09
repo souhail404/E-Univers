@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {AiOutlineInstagram, AiOutlineFacebook, AiOutlineTwitter} from 'react-icons/ai'
 
-const SecondaryHeader = () => {
+const TopHeader = () => {
   return (
     <div className="top-header">
         <div className="container inline-p">
@@ -28,4 +28,4 @@ const SecondaryHeader = () => {
   )
 }
 
-export default SecondaryHeader
+export default TopHeader

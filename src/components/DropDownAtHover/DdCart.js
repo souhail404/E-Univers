@@ -5,7 +5,7 @@ import { AiOutlineShoppingCart} from 'react-icons/ai'
 const DdCart = (props) => {
   return (
     <DropDownAtHover  className={props.className}>
-        <DdBtn qte={2}>
+        <DdBtn qte={2} linkto={props.linkto}> 
             <AiOutlineShoppingCart /> 
         </DdBtn>
         <DdMenu>

@@ -5,7 +5,7 @@ import {AiOutlineHeart} from 'react-icons/ai'
 const DdWishlist = (props) => {
   return (
     <DropDownAtHover  className={props.className}>
-        <DdBtn qte={4}>
+        <DdBtn qte={4} linkto={props.linkto}>
             <AiOutlineHeart /> 
         </DdBtn>
         <DdMenu>
