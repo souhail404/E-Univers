@@ -48,9 +48,9 @@ const BurgerMenu = () => {
 const Logo = () => {
   return (
     <div className="logo--header">
-        <Link to={`/`} className='link-img'>
+        <Link to={''} className='link-img'>
             <div className="icon">
-                <img src="logo/red.png" alt="" />
+                <img src="/logo/red.png" alt="logo"/>
             </div>
         </Link>
     </div>
