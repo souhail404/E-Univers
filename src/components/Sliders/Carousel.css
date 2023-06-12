@@ -10,6 +10,8 @@
     overflow-x: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    padding-block: 8px;
+    background-color: var(--gray);
 }
 .carousel-wrpr .carousel::-webkit-scrollbar{
     height: 0px;
@@ -47,8 +49,8 @@
     border: 1px solid var(--dark);
 }
 .carousel-wrpr .move.move-right{
-    right: 0px;
+    right: -6px;
 }
 .carousel-wrpr .move.move-left{
-    left: 0px;
+    left: -6px;
 }

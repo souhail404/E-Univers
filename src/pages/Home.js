@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BannerElem, Banner } from '../components/Sliders/Banner'
 import { Carousel, CarouselElem } from '../components/Sliders/Carousel'
 import ProductCard from '../components/ProductCard/ProductCard'
 
 
 const Home = () => {
+
   return (
     <>
       <section className='m-sec hero-slider-sec'>
@@ -17,90 +18,52 @@ const Home = () => {
           </div>
       </section>
 
-      <section className="m-sec product-listing">
-        <div className="sec-container">
-            <div className="sec-heading">
-                <h3 className="txt"> best sellers </h3>
-            </div>
-            <div className="sec-content">
-                <Carousel >
-                <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem> 
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                </Carousel>
-            </div>
-        </div>
-      </section>
+      <ProductsListingSec collection='smartphones' />
 
-      <section className="m-sec product-listing">
+      <ProductsListingSec collection="laptops" />
+    </>
+  )
+}
+
+
+const ProductsListingSec = (props) => {
+  const [data, setData] = useState();
+
+  useEffect(()=>{
+    const dataFetch = async () => {
+      const data = await (
+        await fetch(
+          `https://dummyjson.com/products/category/${props.collection}`
+        )
+      ).json();
+
+      // set state when the data received
+      setData(data);
+    };
+
+    dataFetch();
+  }, [])
+
+
+  return (
+     <section className="m-sec product-listing-sec">
         <div className="sec-container">
             <div className="sec-heading">
-                <h3 className="txt"> Top deals </h3>
+                <h3 className="txt"> {props.collection} </h3>
             </div>
             <div className="sec-content">
-                <Carousel >
-                <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem> 
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                  <CarouselElem>
-                    <ProductCard />
-                  </CarouselElem>
-                </Carousel>
+              {data && <Carousel> {
+                  data.products.map((product, index)=>{
+                    return (
+                      <CarouselElem key={index} > 
+                        <ProductCard productData={product} />
+                      </CarouselElem> 
+                    );
+                  })
+                } </Carousel>}
             </div>
         </div>
       </section>
-    </>
   )
 }
 

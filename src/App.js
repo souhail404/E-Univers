@@ -7,6 +7,7 @@ import Signup from "./pages/Signup";
 import Nopage from "./pages/Nopage";
 import Account from "./pages/Account";
 import Wishlist from "./pages/Wishlist";
+import Product from "./pages/Product";
 import ShoppingCart from "./pages/ShoppingCart";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="account" element={<Account />} />
             <Route path="wishlist" element={<Wishlist />} />
             <Route path="shopping-cart" element={<ShoppingCart />} />
+            <Route path="product/:productId" element={<Product/> } />
             <Route path="*" element={<Nopage />} />
           </Route>
         </Routes>

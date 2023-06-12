@@ -16,7 +16,7 @@
     height: 100%;
     padding: 2px 4px;
 }
-.search-field-wrpr .search-icon , .search-field .cancel-icon{
+.search-field-wrpr .search-icon , .search-field-wrpr .cancel-icon{
     border: none;
     background-color: transparent;
     cursor: pointer;

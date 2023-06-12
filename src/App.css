@@ -395,7 +395,9 @@ section.hero-slider-sec .sec-container{
 section.product-listing-sec{
     width: 100%;
     height: auto;
-    background-color: var(--gray);
+    padding-block: 8px;
+    padding-inline: 12px;
+    /* background-color: var(--gray); */
 }
 section.product-listing-sec .sec-container{
     display: flex;
@@ -404,7 +406,6 @@ section.product-listing-sec .sec-container{
 }
 .m-sec .sec-container .sec-heading{
     width: 100%;
-    padding-block: 18px;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr;
