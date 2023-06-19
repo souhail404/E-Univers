@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React , {useState , useEffect} from 'react'
 import {AiOutlineMenu , AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 
@@ -58,6 +58,21 @@ const Logo = () => {
 }
 
 const Categories = () => {
+  const [categories , setCategories] = useState()
+  useEffect(()=>{
+    const dataFetch = async () => {
+      const data = await (
+        await fetch(
+          `https://dummyjson.com/products/categories`
+        )
+      ).json();
+
+    
+    setCategories(data);
+  };
+
+  dataFetch();
+  } , [])
   return (
     <div className="categories--header">
         
@@ -69,24 +84,32 @@ const Categories = () => {
           </DdcBtn>
           <DdcMenu>
             <div className="categories-dd-menu">
-              test
+              <ul>
+                {categories &&
+                  categories.map((categorie, i)=>{
+                    return (
+                      <>
+                        <li key={i}><Link className='link'>{categorie}</Link></li>
+                      </>
+                    )
+                  })
+                }
+              </ul>
             </div>
           </DdcMenu>
         </DropDownAtClick>
 
         <ul className='links-wrapper'>
-            <li><Link className='link'>Phones</Link></li>
-            <span className='separator'></span>
-            <li><Link className='link'>Laptops</Link></li>
-            <span className='separator'></span>
-            <li><Link className='link'>Audio</Link></li>
-            <span className='separator'></span>
-            <li><Link className='link'>Photography</Link></li>
-            <span className='separator'></span>
-            <li><Link className='link'>Accessories</Link></li>
-            <span className='separator'></span>
-            <li><Link className='link'>Office</Link></li>
-            <span className='separator'></span>
+            {categories &&
+              categories.slice(0, 5).map((categorie, i)=>{
+                return (
+                  <>
+                    <li key={i}><Link className='link'>{categorie}</Link></li>
+                    <span key={i} className='separator'></span>
+                  </>
+                )
+              })
+            }
         </ul>
     </div>
   )

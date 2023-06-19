@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './style.css'
+import './ProductCard.css'
 import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
 import { BsCartPlus } from "react-icons/bs";
 

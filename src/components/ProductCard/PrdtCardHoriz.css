@@ -1,0 +1,44 @@
+.horizontal-card-wrpr{
+    display: flex;
+    width: 100%;
+}
+.horizontal-card-wrpr .img{
+    height: 60px;
+    aspect-ratio: 1/1;
+    display: flex;
+}
+.horizontal-card-wrpr .img img{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+.horizontal-card-wrpr .infos{
+    display: flex;
+    flex-direction: column;
+    padding-inline: 6px;
+}
+.horizontal-card-wrpr .infos .name{
+    font-size: 12px;
+    font-weight: 500;
+}
+.horizontal-card-wrpr .infos .name .txt{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: pre-wrap;
+    text-decoration: underline;
+}
+.horizontal-card-wrpr .infos .price{
+    font-size: 12px;
+    display: flex;
+    /* flex-direction: column; */
+}
+.horizontal-card-wrpr .infos .price .old-price{
+    margin-left: 6px;
+    text-decoration: line-through;
+}
+.horizontal-card-wrpr .infos .price .cur-price{
+    font-weight: 500;
+}

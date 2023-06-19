@@ -22,7 +22,7 @@ function App() {
             <Route path="account" element={<Account />} />
             <Route path="wishlist" element={<Wishlist />} />
             <Route path="shopping-cart" element={<ShoppingCart />} />
-            <Route path="product/:productId" element={<Product/> } />
+            <Route exact path="product/:productId" element={<Product/> } />
             <Route path="*" element={<Nopage />} />
           </Route>
         </Routes>

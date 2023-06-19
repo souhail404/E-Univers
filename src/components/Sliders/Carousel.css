@@ -1,6 +1,7 @@
 .carousel-wrpr{
     display: flex;
     width: 100%;
+    max-width: 100%;
     position: relative;
 }
 .carousel-wrpr .carousel{
@@ -11,7 +12,6 @@
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     padding-block: 8px;
-    background-color: var(--gray);
 }
 .carousel-wrpr .carousel::-webkit-scrollbar{
     height: 0px;

@@ -1,0 +1,48 @@
+.testimonial-card-wrpr{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--gray);
+    padding: 12px;
+}
+.testimonial-card-wrpr .client-rate{
+    width: 100%;
+    color: gold;
+    margin-bottom: 6px;
+}
+.testimonial-card-wrpr .client-rate .star{
+    font-size: 18px;
+}
+.testimonial-card-wrpr .client-rate .star:not(:last-of-type){
+    margin-right: 5px;
+}
+
+.testimonial-card-wrpr .comment-title{
+    width: 100%;
+    margin-bottom: 6px;
+}
+.testimonial-card-wrpr .comment-title .txt{
+    font-size: 16px;
+    font-weight: 500 ;
+}
+.testimonial-card-wrpr .comment-content{
+    width: 100%;
+}
+.testimonial-card-wrpr .comment-content .txt{
+    font-size: 16px;
+    font-weight: 300;
+}
+.testimonial-card-wrpr .client-details{
+    width: 100%;
+    display: flex;
+    margin-top: 12px;
+    font-size: 14px;
+}
+.testimonial-card-wrpr .client-details .txt{
+    margin-right: 12px;
+    font-weight: 300;
+}
+.testimonial-card-wrpr .client-details .txt span{
+    font-weight: 400;
+    text-decoration: underline;
+}

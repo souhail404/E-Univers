@@ -46,7 +46,7 @@ const ProductsListingSec = (props) => {
 
 
   return (
-     <section className="m-sec product-listing-sec">
+     <section className="m-sec product-listing-sec bg-sec-light">
         <div className="sec-container">
             <div className="sec-heading">
                 <h3 className="txt"> {props.collection} </h3>

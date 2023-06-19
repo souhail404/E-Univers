@@ -25,15 +25,22 @@
 .inline-p{
     padding-inline: var(--padding);
 }
+body{
+    background-color: var(--gray);
+}
 #page-layout{
     margin-top: var(--header-height);
     padding-block: 36px;
     min-height: 120vh;
-    max-width: 1800px;
+    max-width: 1200px;
     margin-inline: auto;
 }
 #page-layout .m-sec:not(:first-of-type){
     margin-top: 30px;
+}
+.bg-sec-light{
+    background-color: var(--light);
+    box-shadow: 0px 0px 5px #e0e0e0;
 }
 @media (max-width:770px) {
     :root{
@@ -86,7 +93,7 @@ header.header > .container--header{
     color: var(--light);
     font-size: 14px;
     font-weight: 300;
-    max-width: 1800px;
+    max-width: 1200px;
     margin-inline: auto;
 }
 /* Store Links */
@@ -149,7 +156,7 @@ header.header > .container--header{
     display: flex;
     align-items: center;
     color: var(--dark);
-    max-width: 1800px;
+    max-width: 1200px;
     margin-inline: auto;
 }
 /* BURGER MENU */
@@ -397,7 +404,6 @@ section.product-listing-sec{
     height: auto;
     padding-block: 8px;
     padding-inline: 12px;
-    /* background-color: var(--gray); */
 }
 section.product-listing-sec .sec-container{
     display: flex;
@@ -415,4 +421,180 @@ section.product-listing-sec .sec-container{
     font-size: 30px;
     font-weight: 600; 
     text-transform: uppercase;
+}
+
+/* PRODUCT PAGE LAYOUT */
+.product-page-layout{
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+        'prdData prdData sideBar'
+        'moreData moreData moreData'
+        'testim testim testim' ;
+    grid-template-columns: 1.5fr 1.5fr 1fr;
+    gap: 18px;
+}
+section.product-data-sec{
+    grid-area: prdData;
+}
+section.product-more-data{
+    grid-area: moreData;
+}
+section.product-testimonials{
+    grid-area: testim;
+}
+section.product-sidebar{
+    grid-area: sideBar;
+}
+
+
+/* PRODUCT PAGE DATA SECTION */
+section.product-data-sec{
+    display: flex;
+    width: 100%;
+
+}
+section.product-data-sec .sec-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    grid-template-rows: 1fr;
+    gap:18px;
+    padding:  18px 12px;
+}
+section.product-data-sec .left-wrpr{
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+section.product-data-sec .right-wrpr{
+    width: 100%;
+    display: flex;
+}
+section.product-data-sec .info-wrpr{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* PRODUCT PAGE SIDEBAR SECTION */
+section.product-sidebar{
+    display: flex;
+    width: 100%;
+}
+@media (max-width:900px){
+    .product-page-layout{
+        grid-template-areas: 
+            'prdData prdData prdData'
+            'moreData moreData moreData'
+            'testim testim testim' ;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    section.product-sidebar{
+        display: none;
+    }
+}
+@media (max-width:600px){
+    section.product-data-sec .sec-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap:18px
+    }
+    section.product-data-sec .left-wrpr{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+section.product-more-data .mrdt-el{
+    padding-block: 18px;
+    padding-inline: 12px;
+    display: flex;
+    flex-direction: column;
+}
+section.product-more-data .mrdt-el .header{
+    margin-bottom: 12px;
+    width: 100%;
+    text-align: center;
+}
+section.product-more-data .mrdt-el .header .txt{
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
+
+section.product-testimonials .testimonials-wrapper{
+    padding-block: 18px;
+    padding-inline: 12px;
+    display: flex;
+    flex-direction: column;
+}
+section.product-testimonials .testimonials-wrapper .header{
+    margin-bottom: 12px;
+    width: 100%;
+    text-align: center;
+}
+section.product-testimonials .testimonials-wrapper .header .txt{
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+section.product-testimonials .testimonials-wrapper .content{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 18px;
+    width: 100%;
+}
+@media (max-width:770px) {
+    section.product-testimonials .testimonials-wrapper .content{
+        grid-template-columns: 200px 1fr;
+    }
+}
+@media (max-width:600px) {
+    section.product-testimonials .testimonials-wrapper .content{
+        grid-template-columns: 1fr;
+    }
+}
+section.product-testimonials .testimonials-wrapper .content .prd-page--testimonilas-cars:not(:last-of-type){
+    margin-bottom: 12px;
+}
+
+
+section.product-sidebar .prd-page-sidebar-container{
+    padding-block: 12px;
+    padding-inline: 6px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 100%;
+}
+section.product-sidebar .prd-page-sidebar-container .header{
+    margin-bottom: 6px;
+    width: 100%;
+}
+section.product-sidebar .prd-page-sidebar-container .header .txt{
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+section.product-sidebar .content{
+    width: 100%;
+}
+section.product-sidebar  .content .similar-prds-wrpr{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+/* section.product-sidebar  .content .similar-prds-wrpr .sim-prd-el:not(:last-child){
+    margin-bottom: px;
+} */
+section.product-sidebar  .content .similar-prds-wrpr .sim-prd-el img{
+    border: 1px solid rgb(201, 201, 201);
 }
