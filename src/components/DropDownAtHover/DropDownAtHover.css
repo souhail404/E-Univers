@@ -31,4 +31,5 @@
     min-width: 50px;
     padding-top: 6px;
     z-index: 999;
+    display: flex;
 }

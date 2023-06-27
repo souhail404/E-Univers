@@ -10,13 +10,14 @@ const PrdtCardHoriz = (props) => {
         </Link>
         <div className="infos">
             <Link to={`http://localhost:3000/product/${props.product.id}`} className="name">
-                <p className="txt">{props.product.title} Samsung horizontal test</p>
+                <p className="txt">{props.product.title} This just for testing two lines overflow the ellips in text</p>
             </Link>
             <div className="price">
                 <p className='cur-price'>{props.product.price} Dhs</p>
                 <p className="old-price">{ Math.trunc(props.product.price + (props.product.price * props.product.discountPercentage/100))} Dhs</p>
             </div>
         </div>
+        {props.children}
     </div>
   )
 }

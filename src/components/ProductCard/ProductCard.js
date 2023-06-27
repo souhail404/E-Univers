@@ -17,12 +17,12 @@ const ProductCard = (props) => {
                 <Link className='link'>
                     <AiOutlineEye />
                 </Link>
-                <Link className='link'>
+                <div className='link'>
                     <BsCartPlus />
-                </Link>
-                <Link className='link'>
+                </div>
+                <div className='link'>
                     <AiOutlineHeart/>
-                </Link>
+                </div>
             </div>  
             <div className="discount">
                 <p>-{props.productData.discountPercentage}%</p>

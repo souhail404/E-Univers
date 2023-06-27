@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 
-import './style.css'
+import './DropDownAtHover.css'
 
 const DropDownAtHover = (props) => {
       
@@ -16,7 +16,7 @@ const DropDownAtHover = (props) => {
           {props.children[0]}
           
       </div>     
-      {menuOpen && <div className="link-dd-menu-wrpr"> <DdMenu> {props.children[1]} </DdMenu> </div>}
+      {menuOpen && <div className="link-dd-menu-wrpr"> {props.children[1]} </div>}
     </div>
   )
 }

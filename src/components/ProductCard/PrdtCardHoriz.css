@@ -1,6 +1,7 @@
 .horizontal-card-wrpr{
     display: flex;
     width: 100%;
+    position: relative;
 }
 .horizontal-card-wrpr .img{
     height: 60px;
