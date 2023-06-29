@@ -31,7 +31,6 @@ body{
 #page-layout{
     margin-top: var(--header-height);
     padding-block: 36px;
-    min-height: 120vh;
     max-width: 1200px;
     margin-inline: auto;
 }
@@ -614,7 +613,7 @@ section.login-page-sec .header{
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
-    width: 70%;
+    width: 50%;
     text-align: center;
 }
 section.login-page-sec .header .mini-logo{
@@ -623,12 +622,40 @@ section.login-page-sec .header .mini-logo{
 section.login-page-sec .header .mini-logo img {
     max-height: 40px ;
 }
+section.login-page-sec .header .welcm-txt{
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+section.login-page-sec .header .todo-txt{
+    font-size: 18px;
+}
+section.login-page-sec .separator-or{
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    margin-block: 30px;
+    opacity: 0.75;
+    user-select: none;
+}
+section.login-page-sec .separator-or .line{
+    display: flex;
+    align-items: center;
+}
+section.login-page-sec .separator-or .line span{
+    display: flex;
+    width: 100%;
+    height: .1px;
+    background-color: black;
+}
+section.login-page-sec .separator-or p{
+    padding-inline: 12px;
+}
 section.login-page-sec .lgin-form-wrpr{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
-    margin-bottom: 30px;
+    width: 50%;
 }
 section.login-page-sec .lgin-form-wrpr .form-line{
     display: flex;
@@ -637,6 +664,9 @@ section.login-page-sec .lgin-form-wrpr .form-line{
     width: 100%;
 }
 section.login-page-sec .lgin-form-wrpr .form-line:not(:last-of-type){
+    margin-bottom: 18px;
+}
+section.login-page-sec .lgin-form-wrpr .form-line.submit-line{
     margin-bottom: 12px;
 }
 section.login-page-sec .lgin-form-wrpr .form-line input{
@@ -647,25 +677,31 @@ section.login-page-sec .lgin-form-wrpr .form-line input{
 section.login-page-sec .lgin-form-wrpr .form-line .submit-input{
     border: none;
     cursor: pointer;
-    background-color: orange;
-    font-size: 18px;
+    background-color: rgb(236, 145, 0);
+    font-size: 16px;
     font-weight: 500;
     color: white;
 }  
 section.login-page-sec .lgin-form-wrpr .form-line label{
     width: 100%;
+    font-size: 14px;
 }  
 section.login-page-sec .lgin-with-api{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
+    width: 50%;
 }
 section.login-page-sec .lgin-with-api .api-link-wrpr{
     width: 100%;
 }
+section.login-page-sec .lgin-form-wrpr .register-link{
+    text-decoration: underline;
+    color: #3b5998;
+    /* font-size: 14px; */
+}
 section.login-page-sec .lgin-with-api .api-link-wrpr:not(:last-of-type){
-    margin-bottom: 12px;
+    margin-bottom: 18px;
 }
 section.login-page-sec .lgin-with-api .api-link{
     width: 100%;

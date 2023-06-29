@@ -37,8 +37,8 @@ const Carousel = (props) => {
 }
 
 const CarouselElem = (props) => {
-    return (
-        <div className="carousel-elem">
+    return ( 
+        <div key={props.key} className="carousel-elem">
             {props.children}
         </div>
     );
