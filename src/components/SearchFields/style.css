@@ -4,7 +4,7 @@
     align-items: center;
     position: relative;
 }
-.search-field-wrpr .input-wrpr{
+.search-field-wrpr .search-input-wrpr{
     display: flex;
     align-items: center;
     border: 1px solid black;

@@ -7,21 +7,41 @@ import LoginForm from '../components/Forms/LoginForm'
 const Login = () => {
   
   return (
-    <section className='m-sec login-page-sec bg-sec-light'>
+    <section className='m-sec form-page-sec login-page-sec bg-sec-light'>
       <div className="sec-container">
-        <div className="header">
+        
+        <SecHaeder />
+        
+        <LoginForm className='page-form login-form'/> 
+        
+        <SeparatorOr />
+
+        <LoginWithApi />
+        
+      </div>
+    </section>
+  )
+}
+
+const SecHaeder = () => {
+  return (
+    <>
+      <div className="header">
           <div className="mini-logo">
             <img className='mini-logo-img' src="/logo/red.png" alt="" />
           </div>
           <div className="welcm-txt">
             <p>Welcome to Electro Univers</p>
           </div>
-          <div className="todo-txt">
-            <p>Enter your email address or phone number to sign in or create an account.</p>
-          </div>
-        </div>
-        <LoginForm />
-        <div className="separator-or">
+      </div>
+    </>
+  )
+}
+
+const SeparatorOr = () => {
+  return (
+    <>
+      <div className="separator-or">
           <div className="line">
             <span></span>
           </div>
@@ -29,8 +49,15 @@ const Login = () => {
           <div className="line">
             <span></span>
           </div>
-        </div>
-        <div className="lgin-with-api">
+      </div>
+    </>
+  )
+}
+
+const LoginWithApi = () => {
+  return (
+    <>
+      <div className="login-with-api">
           <div className="api-link-wrpr">
             <Link className='api-link facebook'>
               <div className="icon-wrpr">
@@ -51,9 +78,8 @@ const Login = () => {
               </div>
             </Link>
           </div>
-        </div>
       </div>
-    </section>
+    </>
   )
 }
 

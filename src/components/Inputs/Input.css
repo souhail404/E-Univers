@@ -11,6 +11,8 @@
 }
 .input-wrpr .label-d-input .label{
     display: flex;
+    text-transform: capitalize;
+    margin-bottom: 4px;
     margin-right: 12px;
 }
 .input-wrpr .label-d-input .input{

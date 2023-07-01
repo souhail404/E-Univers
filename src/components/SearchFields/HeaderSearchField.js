@@ -47,7 +47,7 @@ const SearchInput = ({ setResult, setIsActive }) => {
         setIsActive(' active')
     }
   return (
-    <div className="input-wrpr">
+    <div className="search-input-wrpr">
         <input className='search-bar' ref={searchbar} type="text" placeholder='Search ...' onChange={(e)=> handleChange(e.target.value)} />
         <AiOutlineSearch  className='search-icon' onClick={()=> handleSearch(' active')}/>
         <AiOutlineClose className='cancel-icon' onClick={()=> handleCancel()} />

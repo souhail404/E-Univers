@@ -9,18 +9,40 @@ const Signup = () => {
 
 
   return (
-    <section className='m-sec login-page-sec bg-sec-light'>
+    <section className='m-sec form-page-sec signup-page-sec bg-sec-light'>
       <div className="sec-container">
-        <div className="header">
+        <SecHaeder />
+
+        <SignUpForm className='page-form signup-form' />
+
+        <SeparatorOr />
+
+        <LoginWithApi />
+      </div>
+    </section>
+  )
+}
+
+const SecHaeder = () => {
+  return (
+    <>
+      <div className="header">
           <div className="mini-logo">
             <img className='mini-logo-img' src="/logo/red.png" alt="" />
           </div>
           <div className="welcm-txt">
             <p>Welcome to Electro Univers</p>
           </div>
-        </div>
-        <SignUpForm />
-        <div className="separator-or">
+      </div>
+    </>
+  )
+}
+
+
+const SeparatorOr = () => {
+  return (
+    <>
+      <div className="separator-or">
           <div className="line">
             <span></span>
           </div>
@@ -28,15 +50,22 @@ const Signup = () => {
           <div className="line">
             <span></span>
           </div>
-        </div>
-        <div className="lgin-with-api">
+      </div>
+    </>
+  )
+}
+
+const LoginWithApi = () => {
+  return (
+    <>
+      <div className="login-with-api">
           <div className="api-link-wrpr">
             <Link className='api-link facebook'>
               <div className="icon-wrpr">
                 <AiFillFacebook  className='icon' />
               </div>
               <div className="txt-wrpr">
-                <p>Sign up using Facebook</p>
+                <p>Login using Facebook</p>
               </div>
             </Link>
           </div>
@@ -46,13 +75,12 @@ const Signup = () => {
                 <AiFillGoogleCircle className='icon' />
               </div>
               <div className="txt-wrpr">
-                <p>Sign up using Google</p>
+                <p>Login using Google</p>
               </div>
             </Link>
           </div>
-        </div>
       </div>
-    </section>
+    </>
   )
 }
 

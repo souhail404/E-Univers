@@ -1,19 +1,23 @@
 import React , {useEffect, useState} from 'react';
 import './Form.css';
 
-import Input from '../Inputs/Input'
 import { Link } from 'react-router-dom';
+
+import Input from '../Inputs/Input';
 
 
 const MultiStepForm = (props) => {
-    const handleSubmit = props.handleSubmit;
-    const formsInfos = props.formsInfos;
+    const {classes , formsInfos , handleSubmit , specialLink} = props.propsData;
+
     const formPages = formsInfos.length-1;
-    const [page , setPage] = useState(0);
+    const [page , setPage] = useState(JSON.parse(localStorage.getItem('page')) || 0);
     
+    useEffect ( ()=>{
+        localStorage['formPageNum'] =  JSON.stringify(page);
+    },[page])
 
     return (
-        <div className="form-wrpr">
+        <div className={`form-wrpr ` + classes }>
             
             {(formPages > 0) && <ProgressBar page={page} formPages={formPages}  /> }
             
@@ -21,15 +25,25 @@ const MultiStepForm = (props) => {
 
             <form action="" className='form-body' onSubmit={handleSubmit}>
                 
-                {props.children[page]}
-
+                {/* {(formPages > 0) ? props.children[page] : props.children } */}
+                <FormPageWrapper page={page} propsData={ props.propsData} />
+                
                 <div className="form-footer">
                     
+                    
+
                     <FormButtons page={page} setPage={setPage} formPages={formPages} />
                     
-                    <div className="special-link">
-                        <Link> go to </Link>
-                    </div>
+                    {
+                        specialLink && specialLink.map((link,i)=>{
+                            return ( 
+                                <div className="special-link">
+                                    <Link to={link.to} className='link'> {link.title} </Link>
+                                </div>
+                            )
+                        })
+                    }
+
                 </div>
             </form>
             
@@ -59,6 +73,37 @@ const ProgressBar = (props) => {
         
         )
 }
+
+
+const FormPageWrapper = (props) => {
+    const {handleBlur , handleChange , values , formsInfos, errors , touched} = props.propsData;
+    const page = props.page;
+    return (
+        <>
+            {
+                formsInfos[page].input.map((el,i)=>{
+                        return(
+                            <Input 
+                                key={i}
+                                type={el.type}
+                                name={el.name} 
+                                label={el.label} 
+                                placeholder={el.placeholder}
+                                value={values[`${el.name}`]} 
+                                error={errors[`${el.name}`]} 
+                                handleBlur={handleBlur} 
+                                handleChange={handleChange}
+                                touched={touched[`${el.name}`]}  
+                            />
+                        )
+                    })
+                
+            }
+        </>
+        
+        )
+}
+
 
 const Header = (props) => {
     const formHeading = props.formHeading;

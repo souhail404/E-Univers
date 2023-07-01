@@ -3,13 +3,35 @@
     display: flex;
     flex-direction: column;
 }
+.form-wrpr .form-prgress-bar{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    column-gap: 12px;
+    margin-bottom: 18px;
+}
+.form-wrpr .form-prgress-bar .progress{
+    height: 6px;
+    width: 100%;
+    border-radius: 6px;
+}
+.form-wrpr .form-prgress-bar .progress.active{
+    background-color: orange;
+}
+.form-wrpr .form-prgress-bar .progress.notactive{
+    background-color: rgb(201, 201, 201);
+}
 .form-wrpr .form-header{
     width: 100%;
     display: flex;
+    margin-bottom: 18px;
 }
 .form-wrpr .form-header .txt{
     width: 100%;
     text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 16px;
 }
 .form-wrpr .form-body{
     width: 100%;
@@ -18,15 +40,11 @@
     align-items: center;
     justify-content: center;
 }
-.form-wrpr .form-body form{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
 .form-wrpr .form-body .form-footer{
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    margin-top: 18px;
 }
 .form-wrpr .form-body .form-btns-wrpr{
     width: 100%;
@@ -36,7 +54,7 @@
 }
 .form-wrpr .form-body .form-btn{
     width: 49%;
-    height: 40px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,20 +72,18 @@
     opacity: 0.5;
     pointer-events: none;
 }
-.form-prgress-bar{
+.form-wrpr .form-body .form-footer .special-link{
     width: 100%;
-    display: grid;
-    grid-template-rows: 1fr;
-    column-gap: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
 }
-.form-prgress-bar .progress{
-    height: 6px;
-    width: 100%;
-    border-radius: 6px;
+.form-wrpr .form-body .form-footer .special-link .link{
+    text-decoration: underline;
+    color: cornflowerblue;
+    font-size: 14px;
 }
-.form-prgress-bar .progress.active{
-    background-color: orange;
-}
-.form-prgress-bar .progress.notactive{
-    background-color: rgb(201, 201, 201);
+.form-wrpr .form-body .input-wrpr:not(:last-of-type){
+    margin-bottom: 18px;
 }
